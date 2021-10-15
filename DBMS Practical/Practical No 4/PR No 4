@@ -1,0 +1,213 @@
+Problem Statement :- Design at least 10 SQL queries for suitable database application using SQL DML statements: All types of joins,Sub-queries and View.
+
+Submitted By :- 1. Bhushan Asati
+                2. Asha Mandale 
+                3. Sayaji Dhandge 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| EMP                |
+| Library            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> create database dml;
+Query OK, 1 row affected (0.19 sec)
+
+mysql> use dml;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> CREATE TABLE customer(id INT PRIMARY KEY,name VARCHAR(25) NOT NULL,salary float NOT NULL);
+Query OK, 0 rows affected (0.53 sec)
+
+
+mysql> INSERT INTO customer VALUES (1,'Bhushan',500000),(2,'Asha',250000);
+Query OK, 2 rows affected (0.09 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO customer VALUES (3,'Sayaji',350000),(4,'Ajesh',353240);
+Query OK, 2 rows affected (0.11 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM customer;
++----+---------+--------+
+| id | name    | salary |
++----+---------+--------+
+|  1 | Bhushan | 500000 |
+|  2 | Asha    | 250000 |
+|  3 | Sayaji  | 350000 |
+|  4 | Ajesh   | 353240 |
++----+---------+--------+
+4 rows in set (0.00 sec)
+
+
+mysql> INSERT INTO orders VALUES (1,2,200),(2,2,1200),(3,3,2300),(4,4,2100),(5,1,100);
+Query OK, 5 rows affected (0.09 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM orders;
++----------+-------------+--------+
+| order_id | customer_id | amount |
++----------+-------------+--------+
+|        1 |           2 |    200 |
+|        2 |           2 |   1200 |
+|        3 |           3 |   2300 |
+|        4 |           4 |   2100 |
+|        5 |           1 |    100 |
++----------+-------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT name,salary,amount FROM customer LEFT JOIN orders ON customer.id = orders.customer_id;
++---------+--------+--------+
+| name    | salary | amount |
++---------+--------+--------+
+| Bhushan | 500000 |    100 |
+| Asha    | 250000 |   1200 |
+| Asha    | 250000 |    200 |
+| Sayaji  | 350000 |   2300 |
+| Ajesh   | 353240 |   2100 |
++---------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT name,salary,amount FROM customer RIGHT JOIN orders ON customer.id = orders.customer_id;
++---------+--------+--------+
+| name    | salary | amount |
++---------+--------+--------+
+| Asha    | 250000 |    200 |
+| Asha    | 250000 |   1200 |
+| Sayaji  | 350000 |   2300 |
+| Ajesh   | 353240 |   2100 |
+| Bhushan | 500000 |    100 |
++---------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT name,salary,amount FROM customer FULL JOIN orders ON id = orders.customer_id;
++---------+--------+--------+
+| name    | salary | amount |
++---------+--------+--------+
+| Asha    | 250000 |    200 |
+| Asha    | 250000 |   1200 |
+| Sayaji  | 350000 |   2300 |
+| Ajesh   | 353240 |   2100 |
+| Bhushan | 500000 |    100 |
++---------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT a.id,b.name,a.salary FROM customer a, customer b WHERE a.salary > b.salary;
++----+--------+--------+
+| id | name   | salary |
++----+--------+--------+
+|  4 | Asha   | 353240 |
+|  3 | Asha   | 350000 |
+|  1 | Asha   | 500000 |
+|  4 | Sayaji | 353240 |
+|  1 | Sayaji | 500000 |
+|  1 | Ajesh  | 500000 |
++----+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT a.id,b.name,a.salary FROM customer a, customer b WHERE a.salary > b.salary;
++----+--------+--------+
+| id | name   | salary |
++----+--------+--------+
+|  4 | Asha   | 353240 |
+|  3 | Asha   | 350000 |
+|  1 | Asha   | 500000 |
+|  4 | Sayaji | 353240 |
+|  1 | Sayaji | 500000 |
+|  1 | Ajesh  | 500000 |
++----+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT id,name,amount FROM customer,orders;
++----+---------+--------+
+| id | name    | amount |
++----+---------+--------+
+|  4 | Ajesh   |    200 |
+|  3 | Sayaji  |    200 |
+|  2 | Asha    |    200 |
+|  1 | Bhushan |    200 |
+|  4 | Ajesh   |   1200 |
+|  3 | Sayaji  |   1200 |
+|  2 | Asha    |   1200 |
+|  1 | Bhushan |   1200 |
+|  4 | Ajesh   |   2300 |
+|  3 | Sayaji  |   2300 |
+|  2 | Asha    |   2300 |
+|  1 | Bhushan |   2300 |
+|  4 | Ajesh   |   2100 |
+|  3 | Sayaji  |   2100 |
+|  2 | Asha    |   2100 |
+|  1 | Bhushan |   2100 |
+|  4 | Ajesh   |    100 |
+|  3 | Sayaji  |    100 |
+|  2 | Asha    |    100 |
+|  1 | Bhushan |    100 |
++----+---------+--------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT id,name,amount FROM customer,orders;
++----+---------+--------+
+| id | name    | amount |
++----+---------+--------+
+|  4 | Ajesh   |    200 |
+|  3 | Sayaji  |    200 |
+|  2 | Asha    |    200 |
+|  1 | Bhushan |    200 |
+|  4 | Ajesh   |   1200 |
+|  3 | Sayaji  |   1200 |
+|  2 | Asha    |   1200 |
+|  1 | Bhushan |   1200 |
+|  4 | Ajesh   |   2300 |
+|  3 | Sayaji  |   2300 |
+|  2 | Asha    |   2300 |
+|  1 | Bhushan |   2300 |
+|  4 | Ajesh   |   2100 |
+|  3 | Sayaji  |   2100 |
+|  2 | Asha    |   2100 |
+|  1 | Bhushan |   2100 |
+|  4 | Ajesh   |    100 |
+|  3 | Sayaji  |    100 |
+|  2 | Asha    |    100 |
+|  1 | Bhushan |    100 |
++----+---------+--------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT name FROM customer WHERE id IN (SELECT customer_id FROM orders);
++---------+
+| name    |
++---------+
+| Bhushan |
+| Asha    |
+| Sayaji  |
+| Ajesh   |
++---------+
+4 rows in set (0.02 sec)
+
+mysql> UPDATE customer SET salary=salary+1000 WHERE id IN (SELECT customer_id FROM orders);
+Query OK, 4 rows affected (0.13 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> SELECT * FROM customer;
++----+---------+--------+
+| id | name    | salary |
++----+---------+--------+
+|  1 | Bhushan | 501000 |
+|  2 | Asha    | 251000 |
+|  3 | Sayaji  | 351000 |
+|  4 | Ajesh   | 354240 |
++----+---------+--------+
+4 rows in set (0.01 sec)
+
+mysql> 
+
+

@@ -1,0 +1,591 @@
+Problem Statement :- Design at least 10 SQL queries for suitable database application using SQL DML statments:Insert,Update,Delete with operators,functions and set.
+
+
+Submitted By :- 1. Bhushan Asati
+                2. Asha Mandale
+                3. Sayaji Dhandge 
+
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+
+mysql> create database Library;
+Query OK, 1 row affected (0.18 sec)
+
+mysql> use Library;
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| Library            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> Create table Books(Bookid integer (10),Author varchar(15),BName varchar(15),Price float(6), Availablity  varchar(10));
+Query OK, 0 rows affected, 1 warning (1.05 sec)
+
+mysql> desc Books;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Bookid      | int         | YES  |     | NULL    |       |
+| Author      | varchar(15) | YES  |     | NULL    |       |
+| BName       | varchar(15) | YES  |     | NULL    |       |
+| Price       | float       | YES  |     | NULL    |       |
+| Availablity | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES((50805,'Mr.ajay','Letusc',520,'yes');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES(66235,'Mrs.sujata','os',625,'yes');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES(63254,'Mrs.shilpa','java',900,'yes');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES(66256,'Mr.sai','software',863,'yes');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES(59235,'Mrs.diksha','cph',540,'yes');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from Books;
++--------+------------+----------+-------+-------------+
+| Bookid | Author     | BName    | Price | Availablity |
++--------+------------+----------+-------+-------------+
+|  66235 | Mrs.sujata | os       |   625 | yes         |
+|  63254 | Mrs.shilpa | java     |   900 | yes         |
+|  66256 | Mr.sai     | software |   863 | yes         |
+|  59235 | Mrs.diksha | cph      |   540 | yes         |
++--------+------------+----------+-------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO Books(Bookid,Author, BName,Price,Availablity) VALUES((50805,'Mr.ajay','Letusc',520,'yes');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> INSERT INTO Books(Bookid,Author,BName,Price,Availablity)VALUES((50805,'Mr.ajay','Letusc',520,'yes');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> INSERT INTO Books(Bookid,Author, BName,Price ,Availablity) VALUES(66255,'Asha','Android',655,'yes');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> desc Books;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Bookid      | int         | YES  |     | NULL    |       |
+| Author      | varchar(15) | YES  |     | NULL    |       |
+| BName       | varchar(15) | YES  |     | NULL    |       |
+| Price       | float       | YES  |     | NULL    |       |
+| Availablity | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Books;
++--------+------------+----------+-------+-------------+
+| Bookid | Author     | BName    | Price | Availablity |
++--------+------------+----------+-------+-------------+
+|  66235 | Mrs.sujata | os       |   625 | yes         |
+|  63254 | Mrs.shilpa | java     |   900 | yes         |
+|  66256 | Mr.sai     | software |   863 | yes         |
+|  59235 | Mrs.diksha | cph      |   540 | yes         |
+|  66255 | Asha       | Android  |   655 | yes         |
++--------+------------+----------+-------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> Create table Publisher( Publish_id integer (10),Address varchar(15) , PName varchar(15));
+Query OK, 0 rows affected, 1 warning (0.81 sec)
+
+mysql> desc Publisher;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Publish_id | int         | YES  |     | NULL    |       |
+| Address    | varchar(15) | YES  |     | NULL    |       |
+| PName      | varchar(15) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO Publisher(Publish_id,Address, PName) VALUES(5628,'Pune','Nirali');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO Publisher(Publish_id,Address, PName) VALUES(5642,'Nashik','TEchmax');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO Publisher(Publish_id,Address, PName) VALUES(8564,'Mumbai','TEchknowledge');
+Query OK, 1 row affected (0.27 sec)
+
+mysql> INSERT INTO Publisher(Publish_id,Address, PName) VALUES(8964,'Nagpur','TEchneo');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> INSERT INTO Publisher(Publish_id,Address, PName) VALUES(6345,'Aurangabaad','Navneet');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> select * from Publisher;
++------------+-------------+---------------+
+| Publish_id | Address     | PName         |
++------------+-------------+---------------+
+|       5628 | Pune        | Nirali        |
+|       5642 | Nashik      | TEchmax       |
+|       8564 | Mumbai      | TEchknowledge |
+|       8964 | Nagpur      | TEchneo       |
+|       6345 | Aurangabaad | Navneet       |
++------------+-------------+---------------+
+5 rows in set (0.00 sec)
+
+mysql> Create table Members( Mid integer (10),M_Info varchar(15) , M_Type varchar(15) ,Address varchar(20), Attr_Name varchar(20), MExp_Date date);
+Query OK, 0 rows affected, 1 warning (0.57 sec)
+
+mysql> desc Members;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Mid       | int         | YES  |     | NULL    |       |
+| M_Info    | varchar(15) | YES  |     | NULL    |       |
+| M_Type    | varchar(15) | YES  |     | NULL    |       |
+| Address   | varchar(20) | YES  |     | NULL    |       |
+| Attr_Name | varchar(20) | YES  |     | NULL    |       |
+| MExp_Date | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO Members(Mid,M_Info,M_Type,Address,Attr_Name, MExp_Date) VALUES(23,'Bhushan','student','Gondia','ABC','2000-09-27');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> INSERT INTO Members(Mid,M_Info,M_Type,Address,Attr_Name, MExp_Date) VALUES(82,'Asha','student','Pune','XYZ','2001-12-28');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO Members(Mid,M_Info,M_Type,Address,Attr_Name, MExp_Date) VALUES(45,'Sayaji','student','Jalna','PQR','1999-5-2');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO Members(Mid,M_Info,M_Type,Address,Attr_Name, MExp_Date) VALUES(23,'Nikhil','student','Nashik','DEF','1999-12-9');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO Members(Mid,M_Info,M_Type,Address,Attr_Name, MExp_Date) VALUES(56,'Pravin','student','Nashik','LMN','2001-6-1');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select *from Members;
++------+---------+---------+---------+-----------+------------+
+| Mid  | M_Info  | M_Type  | Address | Attr_Name | MExp_Date  |
++------+---------+---------+---------+-----------+------------+
+|   23 | Bhushan | student | Gondia  | ABC       | 2000-09-27 |
+|   82 | Asha    | student | Pune    | XYZ       | 2001-12-28 |
+|   45 | Sayaji  | student | Jalna   | PQR       | 1999-05-02 |
+|   23 | Nikhil  | student | Nashik  | DEF       | 1999-12-09 |
+|   56 | Pravin  | student | Nashik  | LMN       | 2001-06-01 |
++------+---------+---------+---------+-----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE Books SET BName = 'javscript' WHERE Bookid =59235;
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Books;
++--------+------------+-----------+-------+-------------+
+| Bookid | Author     | BName     | Price | Availablity |
++--------+------------+-----------+-------+-------------+
+|  66235 | Mrs.sujata | os        |   625 | yes         |
+|  63254 | Mrs.shilpa | java      |   900 | yes         |
+|  66256 | Mr.sai     | software  |   863 | yes         |
+|  59235 | Mrs.diksha | javscript |   540 | yes         |
+|  66255 | Asha       | Android   |   655 | yes         |
++--------+------------+-----------+-------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT SUM(Price) FROM Books;
++------------+
+| SUM(Price) |
++------------+
+|       3583 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(Price) FROM Books;
++------------+
+| SUM(Price) |
++------------+
+|       3583 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(Price) FROM Books;
++------------+
+| MAX(Price) |
++------------+
+|        900 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(Price) FROM Books;
++------------+
+| MIN(Price) |
++------------+
+|        540 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(Price) FROM Books;
++------------+
+| AVG(Price) |
++------------+
+|      716.6 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM Members WHERE Address='Pune';
++------+--------+---------+---------+-----------+------------+
+| Mid  | M_Info | M_Type  | Address | Attr_Name | MExp_Date  |
++------+--------+---------+---------+-----------+------------+
+|   82 | Asha   | student | Pune    | XYZ       | 2001-12-28 |
++------+--------+---------+---------+-----------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> SELECT * FROM Books  WHERE Price>500;
++--------+------------+-----------+-------+-------------+
+| Bookid | Author     | BName     | Price | Availablity |
++--------+------------+-----------+-------+-------------+
+|  66235 | Mrs.sujata | os        |   625 | yes         |
+|  63254 | Mrs.shilpa | java      |   900 | yes         |
+|  66256 | Mr.sai     | software  |   863 | yes         |
+|  59235 | Mrs.diksha | javscript |   540 | yes         |
+|  66255 | Asha       | Android   |   655 | yes         |
++--------+------------+-----------+-------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Books  WHERE Price<500;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Books  WHERE Price<700;
++--------+------------+-----------+-------+-------------+
+| Bookid | Author     | BName     | Price | Availablity |
++--------+------------+-----------+-------+-------------+
+|  66235 | Mrs.sujata | os        |   625 | yes         |
+|  59235 | Mrs.diksha | javscript |   540 | yes         |
+|  66255 | Asha       | Android   |   655 | yes         |
++--------+------------+-----------+-------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE SALARY<>3100;
+ERROR 1146 (42S02): Table 'Library.EMPLOYEE' doesn't exist
+mysql> SELECT * FROM Books WHERE Price<>700;
++--------+------------+-----------+-------+-------------+
+| Bookid | Author     | BName     | Price | Availablity |
++--------+------------+-----------+-------+-------------+
+|  66235 | Mrs.sujata | os        |   625 | yes         |
+|  63254 | Mrs.shilpa | java      |   900 | yes         |
+|  66256 | Mr.sai     | software  |   863 | yes         |
+|  59235 | Mrs.diksha | javscript |   540 | yes         |
+|  66255 | Asha       | Android   |   655 | yes         |
++--------+------------+-----------+-------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE 'T%';
++------------+---------+---------------+
+| Publish_id | Address | PName         |
++------------+---------+---------------+
+|       5642 | Nashik  | TEchmax       |
+|       8564 | Mumbai  | TEchknowledge |
+|       8964 | Nagpur  | TEchneo       |
++------------+---------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '_________';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '____ax';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '_ax';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '_ax';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '_____';
+Empty set (0.01 sec)
+
+mysql> SELECT * FROM Publisher WHERE PName LIKE '%x';
++------------+---------+---------+
+| Publish_id | Address | PName   |
++------------+---------+---------+
+|       5642 | Nashik  | TEchmax |
++------------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM Books WHERE Price BETWEEN 600 AND 900;
++--------+------------+----------+-------+-------------+
+| Bookid | Author     | BName    | Price | Availablity |
++--------+------------+----------+-------+-------------+
+|  66235 | Mrs.sujata | os       |   625 | yes         |
+|  63254 | Mrs.shilpa | java     |   900 | yes         |
+|  66256 | Mr.sai     | software |   863 | yes         |
+|  66255 | Asha       | Android  |   655 | yes         |
++--------+------------+----------+-------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Books WHERE Price IN(625,800);
++--------+------------+-------+-------+-------------+
+| Bookid | Author     | BName | Price | Availablity |
++--------+------------+-------+-------+-------------+
+|  66235 | Mrs.sujata | os    |   625 | yes         |
++--------+------------+-------+-------+-------------+
+1 row in set (0.00 sec)
+
+
+mysql> SELECT M_Type,M_Info AS Member_Name FROM Members;
++---------+-------------+
+| M_Type  | Member_Name |
++---------+-------------+
+| student | Bhushan     |
+| student | Asha        |
+| student | Sayaji      |
+| student | Nikhil      |
+| student | Pravin      |
++---------+-------------+
+5 rows in set (0.00 sec)
+
+
+mysql> SELECT DISTINCT(M_Type) FROM Members;
++---------+
+| M_Type  |
++---------+
+| student |
++---------+
+1 row in set (0.00 sec)
+
+
+mysql> SELECT Author,SUM(Price) From Books GROUP BY Author;
++------------+------------+
+| Author     | SUM(Price) |
++------------+------------+
+| Mrs.sujata |        625 |
+| Mrs.shilpa |        900 |
+| Mr.sai     |        863 |
+| Mrs.diksha |        540 |
+| Asha       |        655 |
++------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT BName,SUM(Price) From Books GROUP BY BName;
++-----------+------------+
+| BName     | SUM(Price) |
++-----------+------------+
+| os        |        625 |
+| java      |        900 |
+| software  |        863 |
+| javscript |        540 |
+| Android   |        655 |
++-----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT BName,MAX(Price) From Books GROUP BY BName;
++-----------+------------+
+| BName     | MAX(Price) |
++-----------+------------+
+| os        |        625 |
+| java      |        900 |
+| software  |        863 |
+| javscript |        540 |
+| Android   |        655 |
++-----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT BName,MIN(Price) From Books GROUP BY BName HAVING BName IN('os','java');
++-------+------------+
+| BName | MIN(Price) |
++-------+------------+
+| os    |        625 |
+| java  |        900 |
++-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT Address FROM Publisher ORDER BY Address ASC;;
++-------------+
+| Address     |
++-------------+
+| Aurangabaad |
+| Mumbai      |
+| Nagpur      |
+| Nashik      |
+| Pune        |
++-------------+
+5 rows in set (0.00 sec)
+
+ERROR: 
+No query specified
+
+mysql> SELECT Address FROM Publisher ORDER BY Address ASC;
++-------------+
+| Address     |
++-------------+
+| Aurangabaad |
+| Mumbai      |
+| Nagpur      |
+| Nashik      |
+| Pune        |
++-------------+
+5 rows in set (0.00 sec)
+
+
+mysql> SELECT Address FROM Publisher ORDER BY Address DESC;
++-------------+
+| Address     |
++-------------+
+| Pune        |
+| Nashik      |
+| Nagpur      |
+| Mumbai      |
+| Aurangabaad |
++-------------+
+5 rows in set (0.00 sec)
+
+
+mysql> ALTER TABLE Members ADD Issue Integer(6);
+Query OK, 0 rows affected, 1 warning (0.64 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> select * from Members;
++------+---------+---------+---------+-----------+------------+-------+
+| Mid  | M_Info  | M_Type  | Address | Attr_Name | MExp_Date  | Issue |
++------+---------+---------+---------+-----------+------------+-------+
+|   23 | Bhushan | student | Gondia  | ABC       | 2000-09-27 |  NULL |
+|   82 | Asha    | student | Pune    | XYZ       | 2001-12-28 |  NULL |
+|   45 | Sayaji  | student | Jalna   | PQR       | 1999-05-02 |  NULL |
+|   23 | Nikhil  | student | Nashik  | DEF       | 1999-12-09 |  NULL |
+|   56 | Pravin  | student | Nashik  | LMN       | 2001-06-01 |  NULL |
++------+---------+---------+---------+-----------+------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE Members SET Issue = 5;
+Query OK, 5 rows affected (0.11 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> select * from Members;
++------+---------+---------+---------+-----------+------------+-------+
+| Mid  | M_Info  | M_Type  | Address | Attr_Name | MExp_Date  | Issue |
++------+---------+---------+---------+-----------+------------+-------+
+|   23 | Bhushan | student | Gondia  | ABC       | 2000-09-27 |     5 |
+|   82 | Asha    | student | Pune    | XYZ       | 2001-12-28 |     5 |
+|   45 | Sayaji  | student | Jalna   | PQR       | 1999-05-02 |     5 |
+|   23 | Nikhil  | student | Nashik  | DEF       | 1999-12-09 |     5 |
+|   56 | Pravin  | student | Nashik  | LMN       | 2001-06-01 |     5 |
++------+---------+---------+---------+-----------+------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE Members SET Issue = 5;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 5  Changed: 0  Warnings: 0
+
+mysql> UPDATE Members SET Issue = 3 WHERE Address = 'Nashik';
+Query OK, 2 rows affected (0.14 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from Members;
++------+---------+---------+---------+-----------+------------+-------+
+| Mid  | M_Info  | M_Type  | Address | Attr_Name | MExp_Date  | Issue |
++------+---------+---------+---------+-----------+------------+-------+
+|   23 | Bhushan | student | Gondia  | ABC       | 2000-09-27 |     5 |
+|   82 | Asha    | student | Pune    | XYZ       | 2001-12-28 |     5 |
+|   45 | Sayaji  | student | Jalna   | PQR       | 1999-05-02 |     5 |
+|   23 | Nikhil  | student | Nashik  | DEF       | 1999-12-09 |     3 |
+|   56 | Pravin  | student | Nashik  | LMN       | 2001-06-01 |     3 |
++------+---------+---------+---------+-----------+------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> DELETE FROM Books WHERE Author='Mrs.shilpa';
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from Books;
++--------+------------+-----------+-------+-------------+
+| Bookid | Author     | BName     | Price | Availablity |
++--------+------------+-----------+-------+-------------+
+|  66235 | Mrs.sujata | os        |   625 | yes         |
+|  66256 | Mr.sai     | software  |   863 | yes         |
+|  59235 | Mrs.diksha | javscript |   540 | yes         |
+|  66255 | Asha       | Android   |   655 | yes         |
++--------+------------+-----------+-------+-------------+
+4 rows in set (0.00 sec)
+
+
+mysql> select * from Members;
++------+---------+---------+---------+-----------+------------+-------+
+| Mid  | M_Info  | M_Type  | Address | Attr_Name | MExp_Date  | Issue |
++------+---------+---------+---------+-----------+------------+-------+
+|   23 | Bhushan | student | Gondia  | ABC       | 2000-09-27 |     5 |
+|   82 | Asha    | student | Pune    | XYZ       | 2001-12-28 |     5 |
+|   45 | Sayaji  | student | Jalna   | PQR       | 1999-05-02 |     5 |
+|   23 | Nikhil  | student | Nashik  | DEF       | 1999-12-09 |     3 |
+|   56 | Pravin  | student | Nashik  | LMN       | 2001-06-01 |     3 |
++------+---------+---------+---------+-----------+------------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> Create table Student(Mid integer(10),Sname varchar(15),prn integer(15));
+Query OK, 0 rows affected, 2 warnings (0.56 sec)
+
+mysql> desc Student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Mid   | int         | YES  |     | NULL    |       |
+| Sname | varchar(15) | YES  |     | NULL    |       |
+| prn   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO Books(Mid,Sname,prn)VALUES((12345,'Asha',457558);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> INSERT INTO Student(Mid,Sname,prn)VALUES(12345,'Asha',457558);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO Student(Mid,Sname,prn)VALUES(54321,'Bhushan',8080562);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO Student(Mid,Sname,prn)VALUES(987654,'Sayaji',52455);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO Student(Mid,Sname,prn)VALUES(94554,'Nikhil',83083);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> select * from Student;
++--------+---------+---------+
+| Mid    | Sname   | prn     |
++--------+---------+---------+
+|  12345 | Asha    |  457558 |
+|  54321 | Bhushan | 8080562 |
+| 987654 | Sayaji  |   52455 |
+|  94554 | Nikhil  |   83083 |
++--------+---------+---------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT Mid FROM Members UNION SELECT Mid FROM Student;
++--------+
+| Mid    |
++--------+
+|     23 |
+|     82 |
+|     45 |
+|     56 |
+|  12345 |
+|  54321 |
+| 987654 |
+|  94554 |
++--------+
+8 rows in set (0.00 sec)
+
+
+

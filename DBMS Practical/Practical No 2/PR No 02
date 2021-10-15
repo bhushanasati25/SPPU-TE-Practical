@@ -1,0 +1,240 @@
+Problem Statement :- Design and develop DB using various SQL objects like Tables, Views, Index, Sequence,Synonym on sample DB.
+
+Submitted By :- 1. Bhushan Asati
+                2. Asha Mandale
+                3. Sayaji Dhandge 
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| EMP                |
+| Library            |
+| dml                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+
+mysql> create database emp;
+Query OK, 1 row affected (0.12 sec)
+
+mysql> use emp;
+Database changed
+
+mysql> create table emp (empno int(6),ename varchar(20) not null ,job varchar(10) not null ,deptno int(3),sal int(5));
+Query OK, 0 rows affected, 3 warnings (1.16 sec)
+
+mysql> alter table emp modify empno int(6) primary key;
+Query OK, 0 rows affected, 1 warning (1.42 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empno  | int         | NO   | PRI | NULL    |       |
+| ename  | varchar(20) | NO   |     | NULL    |       |
+| job    | varchar(10) | NO   |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
+| sal    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table emp modify job varchar(20);
+Query OK, 0 rows affected (1.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empno  | int         | NO   | PRI | NULL    |       |
+| ename  | varchar(20) | NO   |     | NULL    |       |
+| job    | varchar(20) | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
+| sal    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table dept (deptno int(2) primary key ,dname varchar(10),loc varchar(10));
+Query OK, 0 rows affected, 1 warning (0.51 sec)
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(10) | YES  |     | NULL    |       |
+| loc    | varchar(10) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table emp1 (ename varchar(20),empno int(3),check(empno>100));
+Query OK, 0 rows affected, 1 warning (1.07 sec)
+
+
+mysql> ALTER TABLE emp ADD experience varchar(20);
+Query OK, 0 rows affected (0.36 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table emp drop column experience;
+Query OK, 0 rows affected (1.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empno  | int         | NO   | PRI | NULL    |       |
+| ename  | varchar(20) | NO   |     | NULL    |       |
+| job    | varchar(20) | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
+| sal    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into emp values(101,'Asha','Computer Engg',1,50000);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from emp;
++-------+-------+---------------+--------+-------+
+| empno | ename | job           | deptno | sal   |
++-------+-------+---------------+--------+-------+
+|   101 | Asha  | Computer Engg |      1 | 50000 |
++-------+-------+---------------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into emp values(102,'Bhushan Asati','AI ML Enthusiast',2,500000);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into emp values(103,'Sayaji','Web Developer',3,500000);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> select * from emp;
++-------+---------------+------------------+--------+--------+
+| empno | ename         | job              | deptno | sal    |
++-------+---------------+------------------+--------+--------+
+|   101 | Asha          | Computer Engg    |      1 |  50000 |
+|   102 | Bhushan Asati | AI ML Enthusiast |      2 | 500000 |
+|   103 | Sayaji        | Web Developer    |      3 | 500000 |
++-------+---------------+------------------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> truncate table emp;
+Query OK, 0 rows affected (0.70 sec)
+
+mysql> drop table dept;
+Query OK, 0 rows affected (0.62 sec)
+
+mysql> select * from emp;
+Empty set (0.01 sec)
+
+mysql> insert into emp values(101,'Asha','Computer Engg',1,50000);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into emp values(102,'Bhushan Asati','AI ML Enthusiast',2,500000);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into emp values(103,'Sayaji','Web Developer',3,500000);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from emp;
++-------+---------------+------------------+--------+--------+
+| empno | ename         | job              | deptno | sal    |
++-------+---------------+------------------+--------+--------+
+|   101 | Asha          | Computer Engg    |      1 |  50000 |
+|   102 | Bhushan Asati | AI ML Enthusiast |      2 | 500000 |
+|   103 | Sayaji        | Web Developer    |      3 | 500000 |
++-------+---------------+------------------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> create view empview as select * from emp where job='Computer Engg'; 
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> select * from empview;
++-------+-------+---------------+--------+-------+
+| empno | ename | job           | deptno | sal   |
++-------+-------+---------------+--------+-------+
+|   101 | Asha  | Computer Engg |      1 | 50000 |
++-------+-------+---------------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> create view empview2 as select empno,ename,job,deptno from emp;
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> select * from empview2;
++-------+---------------+------------------+--------+
+| empno | ename         | job              | deptno |
++-------+---------------+------------------+--------+
+|   101 | Asha          | Computer Engg    |      1 |
+|   102 | Bhushan Asati | AI ML Enthusiast |      2 |
+|   103 | Sayaji        | Web Developer    |      3 |
++-------+---------------+------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into empview values(105,'Ajesh','Android Developer',4,60000)
+;
+Query OK, 1 row affected (0.15 sec)
+
+mysql> select * from empview;
++-------+-------+---------------+--------+-------+
+| empno | ename | job           | deptno | sal   |
++-------+-------+---------------+--------+-------+
+|   101 | Asha  | Computer Engg |      1 | 50000 |
++-------+-------+---------------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+---------------+-------------------+--------+--------+
+| empno | ename         | job               | deptno | sal    |
++-------+---------------+-------------------+--------+--------+
+|   101 | Asha          | Computer Engg     |      1 |  50000 |
+|   102 | Bhushan Asati | AI ML Enthusiast  |      2 | 500000 |
+|   103 | Sayaji        | Web Developer     |      3 | 500000 |
+|   105 | Ajesh         | Android Developer |      4 |  60000 |
++-------+---------------+-------------------+--------+--------+
+4 rows in set (0.00 sec)
+
+ 
+mysql> insert into empview2 values(106,'Pravin','Web Developer',4);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from empview2;
++-------+---------------+-------------------+--------+
+| empno | ename         | job               | deptno |
++-------+---------------+-------------------+--------+
+|   101 | Asha          | Computer Engg     |      1 |
+|   102 | Bhushan Asati | AI ML Enthusiast  |      2 |
+|   103 | Sayaji        | Web Developer     |      3 |
+|   105 | Ajesh         | Android Developer |      4 |
+|   106 | Pravin        | Web Developer     |      4 |
++-------+---------------+-------------------+--------+
+5 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+---------------+-------------------+--------+--------+
+| empno | ename         | job               | deptno | sal    |
++-------+---------------+-------------------+--------+--------+
+|   101 | Asha          | Computer Engg     |      1 |  50000 |
+|   102 | Bhushan Asati | AI ML Enthusiast  |      2 | 500000 |
+|   103 | Sayaji        | Web Developer     |      3 | 500000 |
+|   105 | Ajesh         | Android Developer |      4 |  60000 |
+|   106 | Pravin        | Web Developer     |      4 |   NULL |
++-------+---------------+-------------------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> drop view empview;
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> drop view empview2;
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> select * from empview;
+ERROR 1146 (42S02): Table 'emp.empview' doesn't exist
+
+
