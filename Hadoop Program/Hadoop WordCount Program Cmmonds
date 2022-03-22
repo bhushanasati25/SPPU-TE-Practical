@@ -1,0 +1,313 @@
+ihack-pc@iHack-PC:~$ su hduser
+Password: 
+hduser@iHack-PC:/home/ihack-pc$ start-all.sh
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:16:47 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-iHack-PC.out
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-iHack-PC.out
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-iHack-PC.out
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:17:07 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-iHack-PC.out
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-iHack-PC.out
+hduser@iHack-PC:/home/ihack-pc$ jps
+7840 SecondaryNameNode
+8149 NodeManager
+8006 ResourceManager
+8441 Jps
+7625 DataNode
+hduser@iHack-PC:/home/ihack-pc$ hadoop namenode -format
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+22/03/22 13:17:56 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = iHack-PC/127.0.1.1
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 2.9.0
+STARTUP_MSG:   classpath = /usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/mockito-all-1.8.5.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jets3t-0.9.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-util-6.1.26.jar:/usr/local/hadoop/share/hadoop/common/lib/jsr305-3.0.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-sslengine-6.1.26.jar:/usr/local/hadoop/share/hadoop/common/lib/httpcore-4.4.4.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/usr/local/hadoop/share/hadoop/common/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/common/lib/httpclient-4.5.2.jar:/usr/local/hadoop/share/hadoop/common/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/zookeeper-3.4.6.jar:/usr/local/hadoop/share/hadoop/common/lib/jsp-api-2.1.jar:/usr/local/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-3.9.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-api-1.7.25.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-server-1.9.jar:/usr/local/hadoop/share/hadoop/common/lib/stax2-api-3.1.4.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-lang3-3.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-6.1.26.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-codec-1.4.jar:/usr/local/hadoop/share/hadoop/common/lib/activation-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-core-1.9.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/usr/local/hadoop/share/hadoop/common/lib/xz-1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-client-2.7.1.jar:/usr/local/hadoop/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-net-3.1.jar:/usr/local/hadoop/share/hadoop/common/lib/json-smart-1.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/xmlenc-0.52.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/usr/local/hadoop/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/woodstox-core-5.0.3.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-io-2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jsch-0.1.54.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/asm-3.2.jar:/usr/local/hadoop/share/hadoop/common/lib/guava-11.0.2.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-lang-2.6.jar:/usr/local/hadoop/share/hadoop/common/lib/jcip-annotations-1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/netty-3.6.2.Final.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/usr/local/hadoop/share/hadoop/common/lib/hamcrest-core-1.3.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-annotations-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/usr/local/hadoop/share/hadoop/common/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/common/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/common/lib/log4j-1.2.17.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-configuration-1.6.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-digester-1.8.jar:/usr/local/hadoop/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-framework-2.7.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-compress-1.4.1.jar:/usr/local/hadoop/share/hadoop/common/lib/junit-4.11.jar:/usr/local/hadoop/share/hadoop/common/lib/servlet-api-2.5.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-json-1.9.jar:/usr/local/hadoop/share/hadoop/common/lib/stax-api-1.0-2.jar:/usr/local/hadoop/share/hadoop/common/lib/gson-2.2.4.jar:/usr/local/hadoop/share/hadoop/common/hadoop-nfs-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-2.9.0-tests.jar:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.7.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.7.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okio-1.4.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-io-2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okhttp-2.4.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/asm-3.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/guava-11.0.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-2.7.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/hadoop-hdfs-client-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-2.9.0-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-2.9.0-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-2.9.0-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn:/usr/local/hadoop/share/hadoop/yarn/lib/javassist-3.18.1-GA.jar:/usr/local/hadoop/share/hadoop/yarn/lib/curator-recipes-2.7.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jets3t-0.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/curator-test-2.7.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/javax.inject-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jetty-sslengine-6.1.26.jar:/usr/local/hadoop/share/hadoop/yarn/lib/httpcore-4.4.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/api-util-1.0.0-M20.jar:/usr/local/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/usr/local/hadoop/share/hadoop/yarn/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/yarn/lib/httpclient-4.5.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-client-1.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jsp-api-2.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/nimbus-jose-jwt-3.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/java-xmlbuilder-0.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/metrics-core-3.0.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-3.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-server-1.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/stax2-api-3.1.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-lang3-3.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jetty-6.1.26.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-codec-1.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/usr/local/hadoop/share/hadoop/yarn/lib/activation-1.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/usr/local/hadoop/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-core-1.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-beanutils-core-1.8.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/xz-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/curator-client-2.7.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/api-asn1-api-1.0.0-M20.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-net-3.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/json-smart-1.1.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/xmlenc-0.52.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/yarn/lib/apacheds-i18n-2.0.0-M15.jar:/usr/local/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/usr/local/hadoop/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/yarn/lib/woodstox-core-5.0.3.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-io-2.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-math-2.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jsch-0.1.54.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/asm-3.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guava-11.0.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/usr/local/hadoop/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jcip-annotations-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-beanutils-1.7.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/java-util-1.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/json-io-2.5.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/yarn/lib/log4j-1.2.17.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-configuration-1.6.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-digester-1.8.jar:/usr/local/hadoop/share/hadoop/yarn/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/local/hadoop/share/hadoop/yarn/lib/curator-framework-2.7.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/servlet-api-2.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-json-1.9.jar:/usr/local/hadoop/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/gson-2.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-registry-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-api-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-client-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-common-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/guice-3.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/xz-1.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/asm-3.2.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/hadoop-annotations-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/junit-4.11.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.9.0-tests.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.9.0.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.9.0.jar:/usr/local/hadoop/contrib/capacity-scheduler/*.jar:/usr/local/hadoop/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r 756ebc8394e473ac25feac05fa493f6d612e6c50; compiled by 'arsuresh' on 2017-11-13T23:15Z
+STARTUP_MSG:   java = 11.0.14
+************************************************************/
+22/03/22 13:17:56 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+22/03/22 13:17:56 INFO namenode.NameNode: createNameNode [-format]
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:17:56 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Formatting using clusterid: CID-3f3a795f-8e3a-45b5-bd9d-eb1134cd65f0
+22/03/22 13:17:57 INFO namenode.FSEditLog: Edit logging is async:true
+22/03/22 13:17:57 INFO namenode.FSNamesystem: KeyProvider: null
+22/03/22 13:17:57 INFO namenode.FSNamesystem: fsLock is fair: true
+22/03/22 13:17:57 INFO namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+22/03/22 13:17:57 INFO namenode.FSNamesystem: fsOwner             = hduser (auth:SIMPLE)
+22/03/22 13:17:57 INFO namenode.FSNamesystem: supergroup          = supergroup
+22/03/22 13:17:57 INFO namenode.FSNamesystem: isPermissionEnabled = true
+22/03/22 13:17:57 INFO namenode.FSNamesystem: HA Enabled: false
+22/03/22 13:17:57 INFO common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling
+22/03/22 13:17:57 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000
+22/03/22 13:17:57 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: The block deletion will start around 2022 Mar 22 13:17:57
+22/03/22 13:17:57 INFO util.GSet: Computing capacity for map BlocksMap
+22/03/22 13:17:57 INFO util.GSet: VM type       = 64-bit
+22/03/22 13:17:57 INFO util.GSet: 2.0% max memory 1000 MB = 20 MB
+22/03/22 13:17:57 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: dfs.block.access.token.enable=false
+22/03/22 13:17:57 WARN conf.Configuration: No unit for dfs.namenode.safemode.extension(30000) assuming MILLISECONDS
+22/03/22 13:17:57 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+22/03/22 13:17:57 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0
+22/03/22 13:17:57 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: defaultReplication         = 1
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: maxReplication             = 512
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: minReplication             = 1
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: replicationRecheckInterval = 3000
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: encryptDataTransfer        = false
+22/03/22 13:17:57 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+22/03/22 13:17:57 INFO namenode.FSNamesystem: Append Enabled: true
+22/03/22 13:17:57 INFO util.GSet: Computing capacity for map INodeMap
+22/03/22 13:17:57 INFO util.GSet: VM type       = 64-bit
+22/03/22 13:17:57 INFO util.GSet: 1.0% max memory 1000 MB = 10 MB
+22/03/22 13:17:57 INFO util.GSet: capacity      = 2^20 = 1048576 entries
+22/03/22 13:17:57 INFO namenode.FSDirectory: ACLs enabled? false
+22/03/22 13:17:57 INFO namenode.FSDirectory: XAttrs enabled? true
+22/03/22 13:17:57 INFO namenode.NameNode: Caching file names occurring more than 10 times
+22/03/22 13:17:57 INFO snapshot.SnapshotManager: Loaded config captureOpenFiles: falseskipCaptureAccessTimeOnlyChange: false
+22/03/22 13:17:57 INFO util.GSet: Computing capacity for map cachedBlocks
+22/03/22 13:17:57 INFO util.GSet: VM type       = 64-bit
+22/03/22 13:17:57 INFO util.GSet: 0.25% max memory 1000 MB = 2.5 MB
+22/03/22 13:17:57 INFO util.GSet: capacity      = 2^18 = 262144 entries
+22/03/22 13:17:57 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+22/03/22 13:17:57 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+22/03/22 13:17:57 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+22/03/22 13:17:57 INFO namenode.FSNamesystem: Retry cache on namenode is enabled
+22/03/22 13:17:57 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+22/03/22 13:17:57 INFO util.GSet: Computing capacity for map NameNodeRetryCache
+22/03/22 13:17:57 INFO util.GSet: VM type       = 64-bit
+22/03/22 13:17:57 INFO util.GSet: 0.029999999329447746% max memory 1000 MB = 307.2 KB
+22/03/22 13:17:57 INFO util.GSet: capacity      = 2^15 = 32768 entries
+Re-format filesystem in Storage Directory /usr/local/hadoop_tmp/hdfs/datanode ? (Y or N) y
+22/03/22 13:17:59 INFO namenode.FSImage: Allocated new BlockPoolId: BP-996143458-127.0.1.1-1647935279153
+22/03/22 13:17:59 INFO common.Storage: Will remove files: [/usr/local/hadoop_tmp/hdfs/datanode/current/VERSION, /usr/local/hadoop_tmp/hdfs/datanode/current/BP-521100052-127.0.1.1-1647917045380]
+22/03/22 13:17:59 INFO common.Storage: Storage directory /usr/local/hadoop_tmp/hdfs/datanode has been successfully formatted.
+22/03/22 13:17:59 INFO namenode.FSImageFormatProtobuf: Saving image file /usr/local/hadoop_tmp/hdfs/datanode/current/fsimage.ckpt_0000000000000000000 using no compression
+22/03/22 13:17:59 INFO namenode.FSImageFormatProtobuf: Image file /usr/local/hadoop_tmp/hdfs/datanode/current/fsimage.ckpt_0000000000000000000 of size 323 bytes saved in 0 seconds.
+22/03/22 13:17:59 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+22/03/22 13:17:59 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at iHack-PC/127.0.1.1
+************************************************************/
+hduser@iHack-PC:/home/ihack-pc$ start-all.sh
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:18:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-iHack-PC.out
+localhost: datanode running as process 7625. Stop it first.
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: secondarynamenode running as process 7840. Stop it first.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:18:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+resourcemanager running as process 8006. Stop it first.
+localhost: nodemanager running as process 8149. Stop it first.
+hduser@iHack-PC:/home/ihack-pc$ jps
+7840 SecondaryNameNode
+8739 NameNode
+9252 Jps
+8149 NodeManager
+8006 ResourceManager
+hduser@iHack-PC:/home/ihack-pc$ sudo rm -rf  /usr/local/hadoop_tmp/hdfs/datanode/*
+[sudo] password for hduser: 
+hduser@iHack-PC:/home/ihack-pc$ start-all.sh
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:19:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+localhost: namenode running as process 8739. Stop it first.
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-iHack-PC.out
+localhost: WARNING: An illegal reflective access operation has occurred
+localhost: WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+localhost: WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+localhost: WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+localhost: WARNING: All illegal access operations will be denied in a future release
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: secondarynamenode running as process 7840. Stop it first.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:19:42 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+resourcemanager running as process 8006. Stop it first.
+localhost: nodemanager running as process 8149. Stop it first.
+hduser@iHack-PC:/home/ihack-pc$ jps
+7840 SecondaryNameNode
+8739 NameNode
+8149 NodeManager
+8006 ResourceManager
+9625 DataNode
+10042 Jps
+hduser@iHack-PC:/home/ihack-pc$ cd Desktop
+hduser@iHack-PC:/home/ihack-pc/Desktop$ ls
+chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop  DBMS
+chrome-kjgfgldnnfoeklkmfkjfagphfepbbdan-Default.desktop  Lab
+data                                                     WordCountTutorial
+hduser@iHack-PC:/home/ihack-pc/Desktop$ cd data
+hduser@iHack-PC:/home/ihack-pc/Desktop/data$ cd ../..
+hduser@iHack-PC:/home/ihack-pc$ cd ../..
+hduser@iHack-PC:/$ cd /usr/local
+hduser@iHack-PC:/usr/local$ ls
+bin  etc  games  hadoop  hadoop_tmp  include  lib  man  share  src
+hduser@iHack-PC:/usr/local$ bin/hdfs dfs -mkdir /user
+bash: bin/hdfs: No such file or directory
+hduser@iHack-PC:/usr/local$ cd hadoop
+hduser@iHack-PC:/usr/local/hadoop$ bin/hdfs dfs -mkdir /user
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:24:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@iHack-PC:/usr/local/hadoop$ bin/hdfs dfs -mkdir /user/bhushan
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:25:11 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@iHack-PC:/usr/local/hadoop$ bin/hdfs dfs -put /home/ihack-pc/Desktop/data/ /user/input
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:26:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@iHack-PC:/usr/local/hadoop$ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.0.jar wordcount /user/input bhushanoutput
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:28:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/22 13:28:41 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+22/03/22 13:28:41 INFO input.FileInputFormat: Total input files to process : 1
+22/03/22 13:28:42 INFO mapreduce.JobSubmitter: number of splits:1
+22/03/22 13:28:42 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+22/03/22 13:28:42 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1647935230954_0001
+22/03/22 13:28:43 INFO impl.YarnClientImpl: Submitted application application_1647935230954_0001
+22/03/22 13:28:43 INFO mapreduce.Job: The url to track the job: http://iHack-PC:8088/proxy/application_1647935230954_0001/
+22/03/22 13:28:43 INFO mapreduce.Job: Running job: job_1647935230954_0001
+22/03/22 13:28:52 INFO mapreduce.Job: Job job_1647935230954_0001 running in uber mode : false
+22/03/22 13:28:52 INFO mapreduce.Job:  map 0% reduce 0%
+22/03/22 13:28:58 INFO mapreduce.Job:  map 100% reduce 0%
+22/03/22 13:29:04 INFO mapreduce.Job:  map 100% reduce 100%
+22/03/22 13:29:04 INFO mapreduce.Job: Job job_1647935230954_0001 completed successfully
+22/03/22 13:29:04 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=179
+		FILE: Number of bytes written=404189
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=220
+		HDFS: Number of bytes written=121
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=3661
+		Total time spent by all reduces in occupied slots (ms)=3868
+		Total time spent by all map tasks (ms)=3661
+		Total time spent by all reduce tasks (ms)=3868
+		Total vcore-milliseconds taken by all map tasks=3661
+		Total vcore-milliseconds taken by all reduce tasks=3868
+		Total megabyte-milliseconds taken by all map tasks=3748864
+		Total megabyte-milliseconds taken by all reduce tasks=3960832
+	Map-Reduce Framework
+		Map input records=7
+		Map output records=16
+		Map output bytes=174
+		Map output materialized bytes=179
+		Input split bytes=109
+		Combine input records=16
+		Combine output records=13
+		Reduce input groups=13
+		Reduce shuffle bytes=179
+		Reduce input records=13
+		Reduce output records=13
+		Spilled Records=26
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=38
+		CPU time spent (ms)=1940
+		Physical memory (bytes) snapshot=509722624
+		Virtual memory (bytes) snapshot=4154408960
+		Total committed heap usage (bytes)=341835776
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=111
+	File Output Format Counters 
+		Bytes Written=121
+hduser@iHack-PC:/usr/local/hadoop$ bin/hdfs dfs -cat bhushanoutput/*
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.9.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/22 13:29:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Association's	1
+College	1
+District	1
+Education	1
+I	1
+India	2
+Pune	2
+USA	2
+ameriaca	1
+america	1
+enginerring	1
+love	1
+of	1
+hduser@iHack-PC:/usr/local/hadoop$ 
+
+
