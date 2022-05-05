@@ -1,0 +1,130 @@
+<html ng-app = "billpayApp">
+
+<!-- SCRIPTS TO BE ADDED IN HEAD TAG --> <head>
+
+<title>Bill Payment Record using angular and bootstram framework</title>
+
+<meta http-equiv = "content-type" content = "text/html; charset=utf-8" />
+
+<!-- ACCESSING ANGULARJS BY CDN METHOD-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<!-- ACCESSING STYLESHEET FOR DESIGN [OPTIONAL PART CAN BE SKIP]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- MODEL PART-->
+<script>
+var model = {
+customer: "Student",
+
+items: [{
+bill: "Electricity",
+status: false
+},
+{
+bill: "Internet(Wi/fi)",
+status: false
+},
+{
+bill: "Parking Charges",
+status: false
+},
+{
+bill: "Phone",
+status: true
+},
+{
+bill: "House Tax",
+status: true
+}
+]
+}
+var billpayApp = angular.module("billpayApp", []);
+billpayApp.controller("billpayctrl", function($scope) { $scope.billpay = model;
+
+$scope.dueBills = function() {
+var items = $scope.billpay.items;
+var counter = 0;
+items.forEach((item) => {
+if (!item.status) {
+counter++;
+}
+})
+return counter;
+
+}
+$scope.redFlag = function() {
+return $scope.dueBills() <= 2 ? "label-success" : "label-danger";
+}
+
+$scope.addBills = function(billName) { obj = {
+
+bill: billName,
+status: false
+}
+$scope.billpay.items.push(obj);
+}
+$scope.removeBills = function(rmvBills) {
+
+$scope.billpay.items.splice($scope.billpay.items.indexOf(rmvBills), 1);
+
+}
+});
+</script>
+</head>
+
+
+<!-- HTML BODY PART-->
+
+<body ng-controller="billpayctrl">
+<div class="container">
+<div class="page-header">
+<h1>{{billpay.customer}}'s Bill's remained to Be Paid -
+
+<span class="lable" ng-class="redFlag()" ng-hide="dueBills()==0"> {{dueBills()}}
+
+</span>
+</h1>
+</div>
+
+<h3><center><b>Add extra biller fields if any</center></b></h3> <div class="panel">
+
+<div class="input-group">
+<input class="form-control" ng-model="billName" />
+<span class="input-group-btn">
+
+<button class="btnbtn-danger" ng-
+click="addBills(billName)">+ADD+</button>
+</span>
+</div>
+
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Bill Name</th>
+<th>Status</th>
+<th>Status</th>
+<th>Close</th>
+
+</tr>
+</thead>
+
+<tbody ng-model = "rmvBills">
+<tr ng-repeat = "item in billpay.items" ng-model="item">
+<td>{{item.bill}}</td>
+<td><input type="checkbox" ng-model="item.status" /></td>
+<td>{{item.status}}</td>
+<td>
+<button type="button" ng-click="removeBills(item)">&times;</button>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</body>
+
+</html>

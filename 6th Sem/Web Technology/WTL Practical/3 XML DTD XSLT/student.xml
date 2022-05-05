@@ -1,0 +1,20 @@
+<?xml version = "1.0"?>
+<?xml-stylesheet type = "text/xsl" href = "student.xsl"?> 
+
+<class>
+<student rollno = "393">
+<firstname>Dinkar</firstname>
+<lastname>Kad</lastname>
+</student>
+
+<student rollno = "493">
+<firstname>Vaneet</firstname>
+<lastname>Gupta</lastname>
+</student>
+
+<student rollno = "400">
+<firstname>Van</firstname>
+<lastname>Gupta</lastname>
+</student>
+
+</class>

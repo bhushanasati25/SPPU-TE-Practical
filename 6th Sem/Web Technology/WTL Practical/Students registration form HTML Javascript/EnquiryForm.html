@@ -1,0 +1,96 @@
+<html>
+<head>
+<script>
+function validateForm() {
+
+   if(document.myForm.name.value.match(/^[A-Za-z]+$/))
+     {
+       
+     }
+   else
+     {
+	alert("Please Characters only");
+	document.myForm.name.focus();
+        return false;
+	
+     }
+    if(document.myForm.phone.value.match(/^[0-9]+$/))  
+      {  
+        
+   	message = "<br>NAME:" + document.myForm.name.value;
+  	message += "<br>ADDRESS: " + document.myForm.address.value;
+	message += "<br>GENDER: " + document.myForm.G.value ;
+ 	message += "<br>PHONE: " + document.myForm.phone.value ;
+	message += "<br>DOB: " + document.myForm.DOB.value ;
+	message += "<br>EMail-Id: " + document.myForm.email.value ;
+	document.write(message); 
+
+	
+      }  
+      else  
+      {  
+        alert('Please input numeric characters only'); 
+	document.myForm.phone.focus();  
+        return false; 
+        
+      }  
+   }
+</script>
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return validateForm()">
+<table border=1 align=center>
+<caption><h1> Enquiry Form </h1></caption>
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" required></td>
+</tr>
+
+<tr>
+<td>Phone No:</td>
+<td><input type="text" name="phone" maxlength=10 required></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="Email" name="email" required></td>
+</tr>
+
+<tr>
+<td>DOB</td>
+<td><input type="date" name="DOB" required></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="G" value="Male" checked>Male
+<input type="radio" name="G" value="Female" >Female
+<input type="radio" name="G" value="Other" >Other
+</td>
+</tr>
+
+<tr>
+<td>Address(Region)</td>
+<td>
+<select name="address">
+<option> Nashik </option>
+<option> Pune </option>
+<option> Mumbai </option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan=2 align=center>
+<input type="submit" value="Submit">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
